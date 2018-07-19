@@ -1,0 +1,11 @@
+input
+build
+stdout*
+stderr*
+namelists_t0w0
+namelists_t1w1
+namelists_t1w1_cg
+script_t0w0.slurm
+script_t1w1.slurm
+script_t1w1_cg.slurm
+diag/ssh.mat
