@@ -8,4 +8,4 @@ Atmospheric forcing files on engaging:
 /nobackup1/joernc/patches/jra55
 
 Atmospheric forcing files on pleiades:
-/nobackup/hzhang1/forcing/jra55
+/nobackup/dmenemen/tarballs/NA_2160/jra55

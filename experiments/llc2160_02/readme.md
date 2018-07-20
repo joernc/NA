@@ -10,9 +10,6 @@
 
 # Get MITgcm from GitHub
  cd /nobackup/$USER/NA
-#- method 1, using https:
- git clone https://github.com/MITgcm/MITgcm.git
-#- method 2, using ssh (requires a github account):
  git clone git@github.com:MITgcm/MITgcm.git
 
 # Request interactive nodes
@@ -23,13 +20,21 @@
  mkdir build run
  cd /nobackup/$USER/NA/MITgcm/build
  module load comp-intel/2016.2.181 mpi-sgi/mpt.2.14r19 hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
- ../tools/genmake2 -of ../tools/build_options/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../code 
+ ../tools/genmake2 -of ../tools/build_options/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../experiments/llc2160_02/code
  make depend
  make -j 16
 
 # Run MITgcm
  cd /nobackup/$USER/NA/MITgcm/run
- cp ../../namelists_t1w1_surf/* .
+ cp ../../experiments/llc2160_02/namelists/* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/input/* .
- ln -sf /nobackup/hzhang1/forcing/jra55 .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/jra55 .
+ mkdir diags
  mpiexec -n 118 ../build/mitgcmuv
+
+# Monitor cfl condition during run
+ cd /nobackup/$USER/NA/MITgcm/run
+ tail -f STDOUT.0000 | grep advcfl_W
+
+# Comparison results are available in
+# /nobackup/$USER/NA/experiments/llc2160_02/results/STDOUT.0000
