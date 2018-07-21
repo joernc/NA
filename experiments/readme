@@ -6,3 +6,7 @@ llc2160_02
 
 llc2160_03
  - same as llc2160_02 but with split atmospheric pressure and tidal forcing
+
+llc2160_04
+ - same as llc2160_03 but using mean "sea level pressure" (jra55_pres_*)
+   instead of "surface pressure" (jra55_pres_old_*)
