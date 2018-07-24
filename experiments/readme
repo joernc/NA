@@ -10,3 +10,6 @@ llc2160_03
 llc2160_04
  - same as llc2160_03 but using mean "sea level pressure" (jra55_pres_*)
    instead of "surface pressure" (jra55_pres_old_*)
+
+ll2160_01
+ - same as llc2160_04 but using lat/lon as opposed to llc configuration
