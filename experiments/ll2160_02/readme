@@ -20,16 +20,17 @@
  mkdir build run
  cd /nobackup/$USER/NA/MITgcm/build
  module load comp-intel/2016.2.181 mpi-sgi/mpt.2.14r19 hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
- ../tools/genmake2 -of ../../experiments/ll2160_01/code/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../experiments/ll2160_01/code
+ ../tools/genmake2 -of ../../experiments/ll2160_01/code/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../experiments/ll2160_02/code
  make depend
  make -j 16
 
 # Run MITgcm
  cd /nobackup/$USER/NA/MITgcm/run
- cp ../../experiments/ll2160_01/namelists/* .
+ cp ../../experiments/ll2160_02/namelists/* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/input_ll/* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/input/runoff* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/jra55 .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/tides/* .
  mkdir diags
  mpiexec -n 144 ../build/mitgcmuv
 
@@ -38,4 +39,4 @@
  tail -f STDOUT.0000 | grep advcfl_W
 
 # Comparison results are available in
-# /nobackup/$USER/NA/experiments/ll2160_01/results/STDOUT.0000
+# /nobackup/$USER/NA/experiments/ll2160_02/results/STDOUT.0000

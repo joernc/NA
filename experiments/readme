@@ -13,3 +13,6 @@ llc2160_04
 
 ll2160_01
  - same as llc2160_04 but using lat/lon as opposed to llc configuration
+
+ll2160_02
+ - same as ll2160_01 but using corser-res (1-degree) tidal forcing
