@@ -19,3 +19,6 @@ ll2160_02
 
 ll2160_03
  - same as ll2160_02 but starting in 2008 instead of 2003
+
+ll2160_04
+ - same as ll2160_03 but using ERA5 instead of JRA55
