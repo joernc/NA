@@ -47,3 +47,46 @@ subplot(717), mypcolor(e7'-e6'); caxis([-1 1]/100), colormap(jet), colorbar
 title(['ll2160.04-ll2160.03: ERA5 vs JRA55'])
 
 print -djpeg eta
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+f1='../../tarballs/NA_2160/jra55/tide_2003';
+f2='../../tarballs/NA_2160/tides/tide_2003';
+t0=readbin(f1,[640 320],1,'real*4',0)/1029;
+t1=readbin(f1,[640 320],1,'real*4',1)/1029;
+t2=readbin(f2,[360 181],1,'real*4',1);
+lon1=0:.5625:359.9;
+dy=[0 .556914, .560202, .560946, .561227, .561363, ...
+      .561440, .561487, .561518, .561539, .561554, ...
+      .561566, .561575, .561582, .561587, .561592, ...
+      ones(1,289)*.561619268965519, ...
+      .561592, .561587, .561582, .561575, .561566, ...
+      .561554, .561539, .561518, .561487, .561440, ...
+      .561363, .561227, .560946, .560202, .556914];
+lat1=-89.57009+cumsum(dy);
+lon=0:359; lat=-90:90;
+t0i=interp2(lat1,lon1',t0,lat,lon');
+t1i=interp2(lat1,lon1',t1,lat,lon');
+td=(t1i+t0i)/2;
+
+clf, orient tall, wysiwyg
+subplot(711), mypcolor(lon1,lat1,t0')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('jra55/tide2003 / 1029, hour 00:30 (record 1)')
+subplot(712), mypcolor(lon1,lat1,t1')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('jra55/tide2003 / 1029, hour 01:30 (record 2)')
+subplot(713), mypcolor(lon1,lat1,t1'-t0')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('difference: panel 2 - panel 1')
+subplot(714), mypcolor(lon,lat,t2')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('tides/tide2003 / 1029, hour 01:00 (record 2)')
+subplot(715), mypcolor(lon,lat,t2'-t0i')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('difference: panel 4 - panel 1')
+subplot(716), mypcolor(lon,lat,t2'-t1i')
+set(gca,'xticklabel',[]), colorbar, plotland
+title('difference: panel 4 - panel 2')
+subplot(717), mypcolor(lon,lat,t2'-td'), colorbar, plotland
+title('difference: panel 4 - ( panel 1 + panel 2 ) / 2')
