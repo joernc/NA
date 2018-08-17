@@ -22,3 +22,6 @@ ll2160_03
 
 ll2160_04
  - same as ll2160_03 but using ERA5 instead of JRA55
+
+ll2160_05
+ - same as ll2160_05 but using tide_IAU_EARTH instead of tide
