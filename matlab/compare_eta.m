@@ -12,7 +12,7 @@ e1=zeros(nx,ny);
 e1(1:nx/4,:)=rot90(readbin(f1,[nx/4 ny],1,'real*4',2),3);
 e1(nx/4+1:nx/2,:)=rot90(readbin(f1,[nx/4 ny],1,'real*4',3),3);
 e1(nx/2+1:nx,:)=readbin(f1,[nx/2 ny]);
-clf, orient tall, wysiwyg
+figure(1), clf, orient tall, wysiwyg
 subplot(711), mypcolor(e1'); caxis([-1 1]/2), colormap(jet), colorbar
 title('ETAN at hour 1 in m for llc2160.02: Joern''s set-up ported to pleiades')
 
@@ -69,7 +69,7 @@ t0i=interp2(lat1,lon1',t0,lat,lon');
 t1i=interp2(lat1,lon1',t1,lat,lon');
 td=(t1i+t0i)/2;
 
-clf, orient tall, wysiwyg
+figure(2), clf, orient tall, wysiwyg
 subplot(711), mypcolor(lon1,lat1,t0')
 set(gca,'xticklabel',[]), colorbar, plotland
 title('jra55/tide2003 / 1029, hour 00:30 (record 1)')
@@ -89,4 +89,17 @@ subplot(716), mypcolor(lon,lat,t2'-t1i')
 set(gca,'xticklabel',[]), colorbar, plotland
 title('difference: panel 4 - panel 2')
 subplot(717), mypcolor(lon,lat,t2'-td'), colorbar, plotland
+title('difference: panel 4 - ( panel 1 + panel 2 ) / 2')
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+pn='../MITgcm/run/diags_ll2160_01/';
+xc=readbin([pn 'XC.data'],[nx ny]);
+yc=readbin([pn 'YC.data'],[nx ny]);
+
+ix=find(lon>=min(xc(:)+360)&lon<=max(xc(:)+360));
+iy=find(lat>=min(yc(:))&lat<=max(yc(:)));
+
+figure(3), clf
+mypcolor(lon(ix),lat(iy),t2(ix,iy)'-td(ix,iy)'), colorbar
 title('difference: panel 4 - ( panel 1 + panel 2 ) / 2')
