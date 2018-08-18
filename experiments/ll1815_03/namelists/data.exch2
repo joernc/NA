@@ -1,0 +1,103 @@
+# EXCH2 Package: Wrapper-2 User Choice
+#--------------------
+#  preDefTopol   :: pre-defined Topology selector:
+#                :: = 0 : topology defined from processing "data.exch2";
+#                :: = 1 : simple, single facet topology;
+#                :: = 2 : customized topology (w2_set_myown_facets)
+#                :: = 3 : 6-facet Cube (3 face-dims: nRed, nGreen, nBlue).
+#  dimsFacets    :: facet pair of dimensions (n1x,n1y, n2x,n2y ...)
+#  facetEdgeLink :: Face-Edge connectivity map:
+#    facetEdgeLink(i,j)=XX.1 : face(j)-edge(i) (i=1,2,3,4 <==> N,S,E,W)
+#    is connected to Northern edge of face "XX" ; similarly,
+#    = XX.2 : to Southern.E, XX.3 = Eastern.E, XX.4 = Western.E of face "XX"
+#  blankList     :: List of "blank" tiles
+#  W2_mapIO      :: global map IO selector (-1 = old type ; 0 = 1 long line in X
+#                :: 1 = compact, mostly in Y dir)
+#  W2_printMsg   :: option for information messages printing
+#                :: <0 : write to log file ; =0 : minimum print ; 
+#                :: =1 : no duplicated print ; =2 : all processes do print
+#--------------------
+ &W2_EXCH2_PARM01
+  W2_printMsg= 0,
+  W2_mapIO   = 1,
+#
+#-- 5 facets llc_270 topology (drop facet 6 and its connection):
+  preDefTopol = 1,
+  dimsFacets = 1815, 532,
+  blankList =
+   386,
+   441,
+   496,
+   551,
+   606,
+   661,
+   716,
+   771,
+   826,
+   881,
+   936,
+   991,
+   442,
+   497,
+   552,
+   607,
+   662,
+   717,
+   772,
+   827,
+   882,
+   937,
+   992,
+   498,
+   553,
+   608,
+   663,
+   718,
+   773,
+   828,
+   883,
+   938,
+   993,
+   554,
+   774,
+   829,
+   884,
+   939,
+   994,
+   830,
+   885,
+   940,
+   995,
+   941,
+   996,
+   942,
+   997,
+    51,
+    52,
+    53,
+   108,
+    54,
+   109,
+   164,
+   219,
+   274,
+   329,
+   714,
+   769,
+   824,
+   989,
+    55,
+   110,
+   165,
+   220,
+   275,
+   330,
+   385,
+   715,
+   770,
+   825,
+   880,
+   935,
+   990,
+  1045,
+ &

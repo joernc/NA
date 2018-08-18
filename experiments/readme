@@ -28,3 +28,9 @@ ll2160_05
 
 ll1815_01
  - same as ll2160_05 but with 1815x532 instead of 2160x540 domain
+
+ll1815_02
+ - same as ll1815_01 but with 1045 33x28 instead of 105 121x76 tiles
+
+ll1815_03
+ - same as ll1815_02 but with blank tiles (970 33x28 tiles)
