@@ -24,4 +24,7 @@ ll2160_04
  - same as ll2160_03 but using ERA5 instead of JRA55
 
 ll2160_05
- - same as ll2160_05 but using tide_IAU_EARTH instead of tide
+ - same as ll2160_04 but using tide_IAU_EARTH instead of tide
+
+ll1815_01
+ - same as ll2160_05 but with 1815x532 instead of 2160x540 domain

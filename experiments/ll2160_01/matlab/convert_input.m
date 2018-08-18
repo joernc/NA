@@ -1,8 +1,8 @@
 % MATLAB commands used on July 23, 2018 to create input files for
 % lat/lon configuration in /nobackup/dmenemen/tarballs/NA_2160/input_ll
 % based on llc input files in /nobackup/dmenemen/tarballs/NA_2160/input
-% It also uses output files from experiments/llc2160_04
-% which at the time were in /nobackup/dmenemen/NA/MITgcm/run/diags04
+% It also uses output files from experiments/llc2160_04, which at the
+% time were in /nobackup/dmenemen/NA/MITgcm/run/diags_llc2160_04
 
 cd /nobackup/dmenemen/tarballs/NA_2160/input_ll
 nx=2160;
@@ -10,7 +10,7 @@ ny=540;
 nz=100;
 pin='../input/';
 
-fnm='/nobackup/dmenemen/NA/MITgcm/run/diags04/YG.data';
+fnm='/nobackup/dmenemen/NA/MITgcm/run/diags_llc2160_04/YG.data';
 tmp=readbin(fnm,[nx/2 ny]);
 delY=zeros(ny,1);
 delY(1:ny-1)=diff(tmp(1,:));
@@ -116,7 +116,7 @@ for k=1:13
     tmp(find(~tmp))=nan; plot(tmp), title([fns ' ' int2str(k)]), pause(1)
 end
 
-% fnm='/nobackup/dmenemen/NA/MITgcm/run/diags04/interior.0000000015.data';
+% fnm='/nobackup/dmenemen/NA/MITgcm/run/diags_llc2160_04/interior.0000000015.data';
 % t=zeros(nx,ny); k=1;
 % t(1:nx/4,:)=rot90(readbin(fnm,[nx/4 ny],1,'real*4',2+(k-1)*4),3);
 % t(nx/4+1:nx/2,:)=rot90(readbin(fnm,[nx/4 ny],1,'real*4',3+(k-1)*4),3);
