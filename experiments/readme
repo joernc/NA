@@ -34,3 +34,13 @@ ll1815_02
 
 ll1815_03
  - same as ll1815_02 but with blank tiles (970 33x28 tiles)
+
+ll1815_04
+ - same as ll1815_03 but with tidal amplitude and phase regenerated using
+   ESR's TMD matlab toolbox
+
+ll1815_05
+ - same as ll1815_04 but with llc_270 lateral boundary conditions
+
+ll1815_06
+ - same as ll1815_05 but adding Gibraltar tidal + llc_270 boundary conditions
