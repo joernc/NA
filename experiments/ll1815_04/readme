@@ -15,7 +15,7 @@
 # Request interactive nodes
  qsub -I -q debug -l select=49:ncpus=20:model=ivy,walltime=2:00:00 -m abe
 
-# Compile MITgcm
+# # Compile MITgcm
  cd /nobackup/$USER/NA/MITgcm
  mkdir build run
  cd /nobackup/$USER/NA/MITgcm/build
@@ -37,6 +37,17 @@
 # Monitor cfl condition during run
  cd /nobackup/$USER/NA/MITgcm/run
  tail -f STDOUT.0000 | grep advcfl_W
+
+# # Compile on Caltech
+ export MITGCMROOT="/central/groups/oceanphysics/anirban/MITgcm/"
+ module load intel/19.1
+ cd build_ll1815/
+ $MITGCMROOT/tools/genmake2 -rootdir=$MITGCMROOT -mods=/central/groups/oceanphysics/anirban/NA/experiments/ll1815_03/code -mpi -of=$MITGCMROOT/tools/build_options/linux_amd64_ifort+impi
+ make depend
+ make -j 16
+
+# # Run on Caltech cluster
+ sbatch SLURM_run_script_caltech
 
 # Comparison results are available in
 # /nobackup/$USER/NA/experiments/ll1815_04/results/STDOUT.0000
