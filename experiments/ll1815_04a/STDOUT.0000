@@ -7,8 +7,8 @@
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) // MITgcmUV version:  checkpoint67g
 (PID.TID 0000.0001) // Build user:        anirban
-(PID.TID 0000.0001) // Build host:        login1
-(PID.TID 0000.0001) // Build date:        Mon Feb 11 12:26:06 PST 2019
+(PID.TID 0000.0001) // Build host:        login2
+(PID.TID 0000.0001) // Build date:        Sat Mar  2 14:32:33 PST 2019
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Execution Environment parameter file "eedata"
@@ -59,7 +59,7 @@
 (PID.TID 0000.0001) maxLengthPrt1D=   65 /* maxLength of 1D array printed to StdOut */
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) ======= Starting MPI parallel Run =========
-(PID.TID 0000.0001)  My Processor Name (len:  9 ) = hpc-23-10
+(PID.TID 0000.0001)  My Processor Name (len:  9 ) = hpc-25-07
 (PID.TID 0000.0001)  Located at (  0,  0) on processor grid (0: 96,0:  0)
 (PID.TID 0000.0001)  Origin at  (     1,     1) on global grid (1: 32010,1:    28)
 (PID.TID 0000.0001)  North neighbor = processor 0000
@@ -3704,6 +3704,8 @@ Global & Regional Statistics diagnostics: Number of lists:     0
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBNvph_1815x13.bin
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBSvam_1815x13.bin
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBSvph_1815x13.bin
+(PID.TID 0000.0001)  MDS_READ_SEC_YZ: opening global file: OBEuam_532x13.bin
+(PID.TID 0000.0001)  MDS_READ_SEC_YZ: opening global file: OBEuph_532x13.bin
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBNu_1815x100x26.bin
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBNu_1815x100x26.bin
 (PID.TID 0000.0001)  MDS_READ_SEC_XZ: opening global file: OBNv_1815x100x26.bin
