@@ -29,9 +29,9 @@ y_v_S = yG(:,3);
 
 outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo7/'
 [am_v_N,ph_v_N,h_v_N,cl_v_N] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_v_N,x_v_N,'v');
-[am_u_N,ph_u_N,h_u_N,cl_u_N] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_u_N,x_u_N,'v');
+[am_u_N,ph_u_N,h_u_N,cl_u_N] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_u_N,x_u_N,'u');
 [am_v_S,ph_v_S,h_v_S,cl_v_S] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_v_S,x_v_S,'v');
-[am_u_S,ph_u_S,h_u_S,cl_u_S] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_u_S,x_u_S,'v');
+[am_u_S,ph_u_S,h_u_S,cl_u_S] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_u_S,x_u_S,'u');
 
 %outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo8/'
 %[am_v_N,ph_v_N,h_v_N,cl_v_N] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_v_N,x_v_N,'v');
