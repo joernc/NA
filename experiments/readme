@@ -44,6 +44,14 @@ ll1815_04a
 
 ll1815_05
  - same as ll1815_04 but with llc_270 lateral boundary conditions
+   set useOBCSYearlyFields=.TRUE. in data.obcs OBCS_PARM01
+   lateral boundary conditions = 12 months: Jan09 to Jun09 and Jul08 to Dec08
 
 ll1815_06
  - same as ll1815_05 but adding Gibraltar tidal + llc_270 boundary conditions
+
+ll1815_07
+ - same as ll1815_06 but run 01Jan09-01Jul09 with 2009 forcing
+   "ln -sf *08 *09" and "ln -sf *09 *10" then run 01Jul09-01Jul10
+   "ln -sf *08 *10" and "ln -sf *09 *11" then run 01Jul10-01Jul11
+   the soft links are just for at,mospheric forcing, not tidal potential
