@@ -31,8 +31,9 @@
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/input/runoff* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/era5 .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/tides/* .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/tideBC_tpxo8_2008/* .
  mkdir diags
- mpiexec -n 970 ../build/mitgcmuv
+ mpiexec -n 97 ../build/mitgcmuv
 
 # Monitor cfl condition during run
  cd /nobackup/$USER/NA/MITgcm/run
