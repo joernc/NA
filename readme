@@ -1,11 +1,70 @@
-Input files on engaging:
+Files on engaging:
+==================
+
 /home/joernc/patches/NA_2160/input
+input files
 
-Input files on pleiades:
-/nobackup/dmenemen/tarballs/NA_2160/input
-
-Atmospheric forcing files on engaging:
 /nobackup1/joernc/patches/jra55
+atmospheric forcing
 
-Atmospheric forcing files on pleiades:
+
+Files on Caltech's central:
+===========================
+
+
+Files on pleiades:
+==================
+
+/nobackup/dmenemen/tarballs/NA_2160/input
+contains files copied from
+engaging:/home/joernc/patches/NA_2160/input
+on July 19, 2018
+
 /nobackup/dmenemen/tarballs/NA_2160/jra55
+atmospheric forcing:
+
+/nobackup/dmenemen/tarballs/NA_2160/input_ll
+contains input files for 2160x540 lat/lon configuration derived
+from "input" directory using input_ll/convert_input.m
+
+/nobackup/dmenemen/tarballs/NA_2160/input_ll1815
+contains input files for 1815x532 lat/lon configuration derived
+from "input_ll" directory using input_ll1815/convert_input.m
+
+/nobackup/dmenemen/tarballs/NA_2160/input_llc270
+contains input files for 1815x532 lat/lon configuration derived
+from llc270 optimization using input_llc270/mk_input.m
+
+/nobackup/dmenemen/tarballs/NA_2160/jra55
+contains links to files in /nobackup/hzhang1/forcing/jra55
+and files copied from
+engaging:/nobackup1/joernc/patches/jra55 on July 20, 2018
+Note that engaging:/nobackup1/joernc/patches/jra55/jra55_pres_200[1-7]
+have been renamed jra55/jra55_pres_old_200[1-7]
+jra55/jra55_pres_old_200[1-7] are "surface pressure"
+fields specified at 01:30/04:30/..../22:30
+For consistency with other atmospheric reanalysis products
+(e.g., ERA), jra55_pres_200[1-7] are now "mean sea level pressure"
+fields specified at 0/3/6/9/12/... (same times as surface air temperature).
+
+/nobackup/dmenemen/tarballs/NA_2160/tides/tide_????
+were copied from eofe4.mit.edu:/home/joernc/tidal-potential/input
+on July 25, 2018
+360x181 hourly potential starting at hour 0
+lon=0:1:359; lat=-90:1:90
+units: m^2/s^2
+
+/nobackup/dmenemen/tarballs/NA_2160/tides/tide_IAU_EARTH_????
+were copied from eofe4.mit.edu:/home/joernc/tidal-potential/input
+on August 1, 2018
+switch to a different, lower-accuracy, input file for
+tidal potential calculation to be able to go beyond 2036.
+
+/nobackup/dmenemen/tarballs/NA_2160/tideBC_tpxo8
+were created by Anirban on February 11, 2018 and copied
+from login.hpc.caltech.edu:/central/groups/oceanphysics/anirban
+on February 18, 2019
+lateral tidal boundary conditions created using instructions
+and routines in NA/experiments/ll1815_04/matlab
+
+/nobackup/dmenemen/tarballs/NA_2160/tideBC_tpxo8_wEBC_1813
