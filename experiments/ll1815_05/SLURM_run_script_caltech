@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -A oceanphysics
-#SBATCH -J test_4a
+#SBATCH -J test_5
 #SBATCH --constraint=skylake
 #SBATCH -t 1:00:00
 #SBATCH -N 4

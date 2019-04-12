@@ -40,7 +40,7 @@ outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo7/'
 %[am_u_S,ph_u_S,h_u_S,cl_u_S] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_u_S,x_u_S,'v');
 
 %startdate = datenum(1992,1,1);
-startdate = datenum(2003,1,1)
+startdate = datenum(2008,1,1)
 [am_v_N,ph_v_N]= tidalConversionCorrection(startdate, am_v_N, ph_v_N, cl_v_N);
 [am_v_S,ph_v_S]= tidalConversionCorrection(startdate, am_v_S, ph_v_S, cl_v_S);
 [am_u_N,ph_u_N]= tidalConversionCorrection(startdate, am_u_N, ph_u_N, cl_u_N);

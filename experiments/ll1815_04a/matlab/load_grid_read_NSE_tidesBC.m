@@ -6,7 +6,7 @@
 % https://github.com/glwagner/nestedModelMaker/tree/master/src
 % depnds on tmd_extract_HC.m and tidalConversionCorrection.m
 
-rDir = '/central/groups/oceanphysics/anirban/NA/experiments/run_ll1815_03/'
+rDir = '/central/groups/oceanphysics/anirban/NA/experiments/ll1815_02/run/'
 xC=rdmds([rDir 'XC']);
 yC=rdmds([rDir 'YC']);
 xG=rdmds([rDir 'XG']);
@@ -22,10 +22,10 @@ x_v_S = xC(:,3);
 y_v_N = yG(:,531);
 y_v_S = yG(:,3);
 
-x_u_E = xG(1814,:);
-y_u_E = yC(1814,:);
-x_v_E = xC(1814,:);
-y_v_E = yG(1814,:);
+x_u_E = xG(1813,:);
+y_u_E = yC(1813,:);
+x_v_E = xC(1813,:);
+y_v_E = yG(1813,:);
 
 %outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo7_AO/'
 %[am_v_N,ph_v_N,h_v_N,cl_v_N] = tmd_extract_HC('DATA_tpxo7_AO/Model_AO_atlas',y_v_N,x_v_N,'v');
@@ -39,7 +39,7 @@ y_v_E = yG(1814,:);
 %[am_v_S,ph_v_S,h_v_S,cl_v_S] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_v_S,x_v_S,'v');
 %[am_u_S,ph_u_S,h_u_S,cl_u_S] = tmd_extract_HC('DATA_tpxo7/Model_tpxo7_atlas',y_u_S,x_u_S,'v');
 
-outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo8_wEBC/'
+outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo8_wEBC_1813/'
 [am_v_N,ph_v_N,h_v_N,cl_v_N] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_v_N,x_v_N,'v');
 [am_u_N,ph_u_N,h_u_N,cl_u_N] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_u_N,x_u_N,'u');
 [am_v_S,ph_v_S,h_v_S,cl_v_S] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_v_S,x_v_S,'v');
@@ -47,7 +47,7 @@ outdir='/central/groups/oceanphysics/anirban/tideBC_tpxo8_wEBC/'
 [am_v_E,ph_v_E,h_v_E,cl_v_E] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_v_E,x_v_E,'v');
 [am_u_E,ph_u_E,h_u_E,cl_u_E] = tmd_extract_HC('DATA_tpxo8_compact/Model_atlas_v1',y_u_E,x_u_E,'u');
 
-%startdate = datenum(2003,1,1)
+startdate = datenum(2008,1,1)
 [am_v_N,ph_v_N]= tidalConversionCorrection(startdate, am_v_N, ph_v_N, cl_v_N);
 [am_v_S,ph_v_S]= tidalConversionCorrection(startdate, am_v_S, ph_v_S, cl_v_S);
 [am_u_N,ph_u_N]= tidalConversionCorrection(startdate, am_u_N, ph_u_N, cl_u_N);

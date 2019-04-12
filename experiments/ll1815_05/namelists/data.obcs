@@ -4,7 +4,6 @@
  &OBCS_PARM01
 OB_Jnorth = 1815*531,
 OB_Jsouth = 1815*2,
-OB_Ieast = 532*1813,
 #
  useOBCSprescribe=.TRUE.,
 # useOBCSsponge=.true.,
@@ -13,20 +12,19 @@ OB_Ieast = 532*1813,
  OBCS_u1_adv_T = 1,
  OBCS_u1_adv_S = 1,
 #
- OBSsFile='OBSs_1815x100x26.bin',
- OBStFile='OBSt_1815x100x26.bin',
- OBSuFile='OBSu_1815x100x26.bin',
- OBSvFile='OBSv_1815x100x26.bin',
+ OBSsFile='OBSs_1815x100x12.bin',
+ OBStFile='OBSt_1815x100x12.bin',
+ OBSuFile='OBSu_1815x100x12.bin',
+ OBSvFile='OBSv_1815x100x12.bin',
 #
- OBNsFile='OBNs_1815x100x26.bin',
- OBNtFile='OBNt_1815x100x26.bin',
- OBNuFile='OBNu_1815x100x26.bin',
- OBNvFile='OBNv_1815x100x26.bin',
+ OBNsFile='OBNs_1815x100x12.bin',
+ OBNtFile='OBNt_1815x100x12.bin',
+ OBNuFile='OBNu_1815x100x12.bin',
+ OBNvFile='OBNv_1815x100x12.bin',
 # Balancing
  useOBCSbalance = .TRUE.,
  OBCS_balanceFacN = -1,
  OBCS_balanceFacS = -1,
- OBCS_balanceFacE = -1,
 ## *****************************************
 ## Tidal BC parameters
 ## *****************************************
@@ -41,10 +39,8 @@ OB_Ieast = 532*1813,
  tidalPeriod  = 44714.165 43200.001 45570.054 43082.050 86164.077 92949.636 86637.200 96726.086 22357.091 21972.022 22569.042 2380715.864 1180295.546,
  OBSamFile='OBSvam_1815x13.bin',
  OBNamFile='OBNvam_1815x13.bin',
- OBEamFile='OBEuam_532x13.bin',
  OBSphFile='OBSvph_1815x13.bin',
  OBNphFile='OBNvph_1815x13.bin',
- OBEphFile='OBEuph_532x13.bin',
  &
 # *****************************************
 # Sponge Layer Parameters.
