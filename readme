@@ -68,3 +68,18 @@ lateral tidal boundary conditions created using instructions
 and routines in NA/experiments/ll1815_04/matlab
 
 /nobackup/dmenemen/tarballs/NA_2160/tideBC_tpxo8_wEBC_1813
+the instructions are in NA/experiments/ll1815_04a/matlab
+
+/nobackup/dmenemen/tarballs/NA_2160/hydrog_BC_IC_from_llc270/
+Contains the hydrographic boundary conditions and Initial Conditions 
+(U, V, Salt, Theta) calculated from 1/3 deg resolution llc 270 output
+interpolated to the finer model grid. 
+For exact description go to
+https://github.com/anirban89/Preprocess_input_NA_MITgcm
+specifically this notebook
+interpolate_STUV_from_llc270_to_4km_make_netdf.ipynb
+Boundary conditions for 12 months (a fake wraparound year
+Jan2009--Jun2009-Jul2008--Dec2008) to make sure there is no
+discontinuity in December.
+Initial conditions for Jan 2009.
+
