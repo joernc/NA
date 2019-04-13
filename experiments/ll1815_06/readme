@@ -20,17 +20,20 @@
  mkdir build run
  cd /nobackup/$USER/NA/MITgcm/build
  module load comp-intel/2016.2.181 mpi-sgi/mpt.2.14r19 hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
- ../tools/genmake2 -of ../../experiments/ll2160_01/code/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../experiments/ll1815_03/code
+ ../tools/genmake2 -of ../tools/build_options/linux_amd64_ifort+mpi_ice_nas -mpi -mods ../../experiments/ll1815_06/code
  make depend
  make -j 16
 
 # Run MITgcm
  cd /nobackup/$USER/NA/MITgcm/run
- cp ../../experiments/ll1815_03/namelists/* .
- ln -sf /nobackup/dmenemen/tarballs/NA_2160/input_ll1815/* .
+ cp ../../experiments/ll1815_06/namelists/* .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/input_ll1815/delYFile .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/input_ll1815/bathy.bin .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/input/runoff* .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/era5 .
  ln -sf /nobackup/dmenemen/tarballs/NA_2160/tides/* .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/tideBC_tpxo8_wEBC_1813/* .
+ ln -sf /nobackup/dmenemen/tarballs/NA_2160/hydrog_BC_IC_from_llc270/* .
  mkdir diags
  mpiexec -n 970 ../build/mitgcmuv
 
@@ -39,4 +42,4 @@
  tail -f STDOUT.0000 | grep advcfl_W
 
 # Comparison results are available in
-# /nobackup/$USER/NA/experiments/ll1815_03/results/STDOUT.0000
+# /nobackup/$USER/NA/experiments/ll1815_06/STDOUT.0000

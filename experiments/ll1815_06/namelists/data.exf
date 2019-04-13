@@ -187,11 +187,5 @@
  &
 #
  &EXF_NML_OBCS
-  obcsSstartdate1   = 20071215,
-  obcsSstartdate2   = 060000,
-  obcsSperiod       = 2629800.0,
-#
-  obcsNstartdate1   = 20071215,
-  obcsNstartdate2   = 060000,
-  obcsNperiod       = 2629800.0,
+ useOBCSYearlyFields=.TRUE.,
  &

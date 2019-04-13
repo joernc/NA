@@ -46,9 +46,13 @@ ll1815_05
  - same as ll1815_04 but with llc_270 lateral boundary conditions
    set useOBCSYearlyFields=.TRUE. in data.obcs OBCS_PARM01
    lateral boundary conditions = 12 months: Jan09 to Jun09 and Jul08 to Dec08
+   data.cal starts on January 1, 2008, with repeat 2008 atmospheric forcing
 
 ll1815_06
  - same as ll1815_05 but adding Gibraltar tidal + llc_270 boundary conditions
+   set useOBCSYearlyFields=.TRUE. in data.obcs OBCS_PARM01
+   lateral boundary conditions = 12 months: Jan09 to Jun09 and Jul08 to Dec08
+   data.cal starts on January 1, 2008, with repeat 2008 atmospheric forcing
 
 ll1815_07
  - same as ll1815_06 but run 01Jan09-01Jul09 with 2009 forcing
