@@ -1,4 +1,4 @@
-Replace with rectangular caresian grid with fixed dx and dy (in degrees)
+Replace with rectangular cartesian grid with fixed dx and dy (in degrees)
 about xOrigin = -81.583 ; yOrigin = 26.855 
                 degrees (lon, lat)
 Experiment keys
