@@ -1,0 +1,68 @@
+# Diagnostic Package Choices
+#-----------------
+# for each output-stream:
+#  filename(n) : prefix of the output file name (only 8.c long) for outp.stream n
+#  frequency(n):< 0 : write snap-shot output every multiple of |frequency| (iter)
+#               > 0 : write time-average output every multiple of frequency (iter)
+#  levels(:,n) : list of levels to write to file (Notes: declared as REAL)
+#                 when this entry is missing, select all common levels of this list
+#  fields(:,n) : list of diagnostics fields (8.c) (see "available_diagnostics" file 
+#                 for the list of all available diag. in this particular config)
+#--------------------------------------------------------------------
+#
+ &diagnostics_list
+#
+   dumpatlast = .TRUE.,
+#
+#---
+frequency(1) = -14400.0,
+   fields(1:8,1) = 'ETAN','MXLDEPTH','TFLUX','SFLUX','oceQsw','PHI_SURF','oceTAUX','oceTAUY',
+   filename(1) = '4hourly_surf/surface',
+#---
+  frequency(2) = -14400.0,
+   fields(1:14,2)= 'THETA','SALT','UVEL','VVEL','WVEL',
+                   'ADVr_TH','ADVr_SLT','ADVx_TH','ADVx_SLT','ADVy_TH','ADVy_SLT',
+                   'KPPdiffT','KPPviscA','PHIHYD',
+   filename(2) = '4hourly_int/interior',
+   levels(1:58,2) =  1., 2., 3., 4., 5., 6., 7., 8., 9.,10.,11.,12.,13.,14.,15.,
+                     16.,17.,18.,19.,20.,21.,22.,23.,24.,25.,26.,27.,28.,29.,30.,
+                     31.,32.,33.,34.,35.,36.,37.,38.,39.,40.,41.,42.,43.,44.,45.,
+                     46.,47.,48.,49.,50.,51.,52.,53.,54.,55.,56.,57.,58.,
+ /
+#
+#
+# Parameter for Diagnostics of per level statistics:
+#-----------------
+# for each output-stream:
+#  stat_fname(n) : prefix of the output file name (only 8.c long) for outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of diagnostics fields (8.c) (see "available_diagnostics.log"
+#                 file for the list of all available diag. in this particular config)
+#-----------------
+ &DIAG_STATIS_PARMS
+# diagSt_regMaskFile='basin_masks_eccollc_90x50.bin',
+# nSetRegMskFile=1,
+# set_regMask(1)= 1,  1,  1,  1,  1,  1,  1,  1,  1,
+#                 1,  1,  1,  1,  1,  1,  1,  1
+# val_regMask(1)= 1., 2., 3., 4., 5., 6., 7., 8., 9.,
+#                10.,11.,12.,13.,14.,15.,16.,17.
+##---
+# stat_fields(1,1)= 'ETAN    ','ETANSQ  ','DETADT2 ',
+#                   'UVEL    ','VVEL    ','WVEL    ',
+#                   'THETA   ','SALT    ',
+#    stat_fname(1)= 'dynStDiag',
+#     stat_freq(1)= 3153600.,
+# stat_region(1,1)=  1, 2, 3, 4, 5, 6, 7, 8, 9,
+#                   10,11,12,13,14,15,16,17
+##---
+# stat_fields(1,2)= 'oceTAUX ','oceTAUY ',
+#                   'surForcT','surForcS','TFLUX   ','SFLUX   ',
+#                   'oceQnet ','oceSflux','oceFWflx',
+#    stat_fname(2)= 'surfStDiag',
+#     stat_freq(2)= 3153600.,
+# stat_region(1,2)=  1, 2, 3, 4, 5, 6, 7, 8, 9,
+#                   10,11,12,13,14,15,16,17
+ /

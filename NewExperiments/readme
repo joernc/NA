@@ -1,0 +1,12 @@
+Replace with rectangular caresian grid with fixed dx and dy (in degrees)
+about xOrigin = -81.583 ; yOrigin = 26.855 
+                degrees (lon, lat)
+Experiment keys
+ - ll370  : ~ 16 km grid spacing, dx = 0.204548868322994; dy = 0.166666666666667; (degrees lon, lat)
+ - ll740  : ~ 8 km grid spacing, dx = 0.102274434161496; dy = 0.083333333333333; (degrees lon, lat)
+ - ll1480 : ~ 4 km grid spacing, dx = 0.051137217080748; dy = 0.041666666666667; (degrees lon, lat)
+ - ll2960 : ~ 2 km grid spacing, dx = 0.025568608540374; dy = 0.020833333333333; (degrees lon, lat)
+
+Suffix keys
+ - _01  : initial run to get blank tiles (in land)
+ - _02  : use blank tiles list from STDOUT of run _01, modify data.exch run with blank tiles 
