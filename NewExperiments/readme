@@ -10,3 +10,48 @@ Experiment keys
 Suffix keys
  - _01  : initial run to get blank tiles (in land)
  - _02  : use blank tiles list from STDOUT of run _01, modify data.exch run with blank tiles 
+
+>>>>>>>>>>>
+
+Note that all new experiments except for ll740_01 and ll1480_01 have following configuration error.
+The namelists/data.exf file should contain:
+
+ &EXF_NML_OBCS
+  obcsEperiod       = -12.,
+  obcsNperiod       = -12.,
+  obcsSperiod       = -12.,
+ &
+
+instead of:
+
+ &EXF_NML_OBCS
+ useOBCSYearlyFields=.TRUE.,
+ &
+
+As defined in pkg/obcs/obcs_exf_load.F
+C-    obcsPeriod=-12 means input file contains 12 monthly means
+C     records, corresponding to Jan. (rec=1) through Dec. (rec=12)
+
+This configuration will no longer run with newer MITgcm code.
+The reason that it did not crash when used for manuscript is because
+it predates following modification introduced by Oliver Jahn:
+
+checkpoint68e (2021/12/10)
+o pkg/exf:
+  - add option for interannual monthly forcing with pkg/cal by setting
+    ${fld}_period=-1. (like -12. indicates climatological monthly forcing),
+    available with or without useExfYearlyFields ; update exp. global_with_exf
+    SST forcing to test this new option with and without useExfYearlyFields.
+
+before checkpoint68e, pkg/exf/exf_getyearlyfieldname.F
+added a year at end of filename under following conditions:
+if (useYearlyFields.and.genperiod.gt.0) then
+c     Complete filename with YR or _YEAR extension
+
+after checkpoint68e, the condition was changed to:
+      IF ( useYearlyFields .AND. genperiod.NE.-12 ) THEN
+C     Complete filename with YR or _YEAR extension
+
+What that means is that the manuscript configurations ran with "genperiod=0”, that is, steady,
+January-mean open boundary conditions, instead of monthly-mean climatological boundary conditions.
+Newer code attempts to add a year at end of filename when "genperiod=0”, and therefore crashes.
