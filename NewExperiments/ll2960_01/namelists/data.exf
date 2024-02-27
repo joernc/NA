@@ -187,5 +187,10 @@
  &
 #
  &EXF_NML_OBCS
- useOBCSYearlyFields=.TRUE.,
+# Sinha, Callies, and Menemenlis (2023) accidentally used constant
+# lateral obcs fields, see ../../readme file for details
+# useOBCSYearlyFields=.TRUE.,
+  obcsEperiod       = -12.,
+  obcsNperiod       = -12.,
+  obcsSperiod       = -12.,
  &
